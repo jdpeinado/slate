@@ -1,34 +1,196 @@
-# Test
+# Platzi Core API
 
-<aside class="notice">
-This is a test for include another file
-</aside>
+Version: 1.0.0
 
-whatever whatever
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatibus, quibusdam, voluptas, voluptatem voluptate quia quae voluptatum quod quos doloribus quas natus. Quisquam, voluptatibus, quibusdam, voluptas, voluptatem voluptate quia quae voluptatum quod quos doloribus quas natus. Quisquam, voluptatibus, quibusdam, voluptas, voluptatem voluptate quia quae voluptatum quod quos doloribus quas natus. Quisquam, voluptatibus, quibusdam, voluptas, voluptatem voluptate quia quae voluptatum quod quos doloribus quas natus. Quisquam, voluptatibus, quibusdam, voluptas, voluptatem voluptate quia quae voluptatum quod quos doloribus quas natus. Quisquam, voluptatibus, quibusdam, voluptas, voluptatem voluptate quia quae voluptatum quod quos doloribus quas natus.
+Monolith API for Platzi
 
-> To authorize, use this code:
+## /api/b2b-v1/activations/{company_id}/
 
-```ruby
-require 'kittn'
+### GET /api/b2b-v1/activations/{company_id}/
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
+#### api_b2b_v1_activations_list
 
-```python
-import kittn
+- Parameters:
+  - `company_id` (path) - (integer, required)
+  - `page` (query) - A page number within the paginated result set. (integer)
+  - `page_size` (query) - Number of results to return per page. (integer)
 
-api = kittn.authorize('meowmeowmeow')
-```
+- Tags: api
 
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here" \
-  -H "Authorization: meowmeowmeow"
-```
+- Security:
+  - tokenAuth
+  - tokenAuth
+  - tokenAuth
+  - cookieAuth
+  - tokenAuth
 
-```javascript
-const kittn = require('kittn');
+- Responses:
+  - 200:
+    - Content-Type: application/json
+    - Schema: [PaginatedCompanyUserList](#components/schemas/PaginatedCompanyUserList)
 
-let api = kittn.authorize('meowmeowmeow');
-```
+### POST /api/b2b-v1/activations/{company_id}/
+
+#### api_b2b_v1_activations_create
+
+- Parameters:
+  - `company_id` (path) - (integer, required)
+
+- Tags: api
+
+- Request Body:
+  - Content-Type: application/json
+    - Schema: [CompanyUser](#components/schemas/CompanyUser)
+  - Content-Type: application/x-www-form-urlencoded
+    - Schema: [CompanyUser](#components/schemas/CompanyUser)
+  - Content-Type: multipart/form-data
+    - Schema: [CompanyUser](#components/schemas/CompanyUser)
+
+- Security:
+  - tokenAuth
+  - tokenAuth
+  - tokenAuth
+  - cookieAuth
+  - tokenAuth
+
+- Responses:
+  - 200:
+    - Content-Type: application/json
+    - Schema: [CompanyUser](#components/schemas/CompanyUser)
+
+### PATCH /api/b2b-v1/activations/{company_id}/
+
+#### api_b2b_v1_activations_partial_update
+
+- Parameters:
+  - `company_id` (path) - (integer, required)
+
+- Tags: api
+
+- Request Body:
+  - Content-Type: application/json
+    - Schema: [PatchedCompanyUser](#components/schemas/PatchedCompanyUser)
+  - Content-Type: application/x-www-form-urlencoded
+    - Schema: [PatchedCompanyUser](#components/schemas/PatchedCompanyUser)
+  - Content-Type: multipart/form-data
+    - Schema: [PatchedCompanyUser](#components/schemas/PatchedCompanyUser)
+
+- Security:
+  - tokenAuth
+  - tokenAuth
+  - tokenAuth
+  - cookieAuth
+  - tokenAuth
+
+- Responses:
+  - 200:
+    - Content-Type: application/json
+    - Schema: [CompanyUser](#components/schemas/CompanyUser)
+
+### DELETE /api/b2b-v1/activations/{company_id}/
+
+#### api_b2b_v1_activations_destroy
+
+- Parameters:
+  - `company_id` (path) - (integer, required)
+
+- Tags: api
+
+- Security:
+  - tokenAuth
+  - tokenAuth
+  - tokenAuth
+  - cookieAuth
+  - tokenAuth
+
+- Responses:
+  - 204:
+    - No response body
+
+## /api/b2b-v1/activations/{company_id}/csv/
+
+### GET /api/b2b-v1/activations/{company_id}/csv/
+
+#### api_b2b_v1_activations_csv_retrieve
+
+- Parameters:
+  - `company_id` (path) - (integer, required)
+
+- Tags: api
+
+- Security:
+  - tokenAuth
+  - tokenAuth
+  - tokenAuth
+  - cookieAuth
+  - tokenAuth
+
+- Responses:
+  - 200:
+    - No response body
+
+### POST /api/b2b-v1/activations/{company_id}/csv/
+
+#### api_b2b_v1_activations_csv_create
+
+- Parameters:
+  - `company_id` (path) - (integer, required)
+
+- Tags: api
+
+- Security:
+  - tokenAuth
+  - tokenAuth
+  - tokenAuth
+  - cookieAuth
+  - tokenAuth
+
+- Responses:
+  - 200:
+    - No response body
+
+## /api/b2b-v1/activations/{company_id}/csv/{csv_activations_id}/
+
+### GET /api/b2b-v1/activations/{company_id}/csv/{csv_activations_id}/
+
+#### api_b2b_v1_activations_csv_retrieve_2
+
+- Parameters:
+  - `company_id` (path) - (integer, required)
+  - `csv_activations_id` (path) - (integer, required)
+
+- Tags: api
+
+- Security:
+  - tokenAuth
+  - tokenAuth
+  - tokenAuth
+  - cookieAuth
+  - tokenAuth
+
+- Responses:
+  - 200:
+    - No response body
+
+## /api/b2b-v1/activations/{company_id}/licenses/
+
+### GET /api/b2b-v1/activations/{company_id}/licenses/
+
+#### api_b2b_v1_activations_licenses_retrieve
+
+- Description: Return Response with data containing company licenses, invited quantity, registered quantity, and pending quantity
+- Parameters:
+  - `company_id` (path) - (integer, required)
+
+- Tags: api
+
+- Security:
+  - tokenAuth
+  - tokenAuth
+  - tokenAuth
+  - cookieAuth
+  - tokenAuth
+
+- Responses:
+  - 200:
+    - No response body
