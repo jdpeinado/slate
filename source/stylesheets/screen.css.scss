@@ -635,3 +635,13 @@ html, body {
 .copy-clipboard:hover {
   opacity: 0.8;
 }
+
+// Style an aside like <pre> to show code in middle column
+aside.pre {
+  font-family: monospace;
+  white-space: pre;
+  background: #f0f0f0;
+  padding-top: 0;
+}
+
+
