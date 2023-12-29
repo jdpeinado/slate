@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <meta
             name="description"
-            content="Documentation for the Kittn API"
+            content="Documentation for Platzi API"
         >
-    <title>API Reference</title>
+    <title>Platzi API</title>
 
     <style media="screen">
       .highlight table td { padding: 5px; }
@@ -286,7 +286,7 @@
   color: #859900;
 }
     </style>
-    <link href="stylesheets/screen-9c19b03a.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/screen-68ed10f1.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print-966d6edc.css" rel="stylesheet" media="print" />
       <script src="javascripts/all-b12a2749.js"></script>
 
@@ -295,7 +295,7 @@
     </script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;python&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -306,9 +306,7 @@
       <img src="images/logo-1e815a84.png" class="logo" alt="" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
               <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -316,522 +314,289 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+            <a href="#introduccion" class="toc-h1 toc-link" data-title="Introducción">Introducción</a>
           </li>
           <li>
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
           </li>
           <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#licencias" class="toc-h1 toc-link" data-title="Licencias">Licencias</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
-                  </li>
-                  <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
-                  </li>
-                  <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#get-licenses-info" class="toc-h2 toc-link" data-title="Get Licenses info">Get Licenses info</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
-          </li>
-          <li>
-            <a href="#platzi-core-api" class="toc-h1 toc-link" data-title="Platzi Core API">Platzi Core API</a>
+            <a href="#activaciones-de-estudiantes" class="toc-h1 toc-link" data-title="Activaciones de estudiantes">Activaciones de estudiantes</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#api-b2b-v1-activations-company_id" class="toc-h2 toc-link" data-title="/api/b2b-v1/activations/{company_id}/">/api/b2b-v1/activations/{company_id}/</a>
+                    <a href="#get-list-students" class="toc-h2 toc-link" data-title="Get List Students">Get List Students</a>
                   </li>
                   <li>
-                    <a href="#api-b2b-v1-activations-company_id-csv" class="toc-h2 toc-link" data-title="/api/b2b-v1/activations/{company_id}/csv/">/api/b2b-v1/activations/{company_id}/csv/</a>
-                  </li>
-                  <li>
-                    <a href="#api-b2b-v1-activations-company_id-csv-csv_activations_id" class="toc-h2 toc-link" data-title="/api/b2b-v1/activations/{company_id}/csv/{csv_activations_id}/">/api/b2b-v1/activations/{company_id}/csv/{csv_activations_id}/</a>
-                  </li>
-                  <li>
-                    <a href="#api-b2b-v1-activations-company_id-licenses" class="toc-h2 toc-link" data-title="/api/b2b-v1/activations/{company_id}/licenses/">/api/b2b-v1/activations/{company_id}/licenses/</a>
+                    <a href="#create-students" class="toc-h2 toc-link" data-title="Create Students">Create Students</a>
                   </li>
               </ul>
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='#'>More information in https://platzi.com/business</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+        <h1 id='introduccion'>Introducción</h1>
+<p>Bienvenido a la documentación de la API de Platzi. Aquí encontrarás toda la información necesaria para integrar tu aplicación con Platzi.</p>
 
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p>Esta API está solo disponibles para empresas que tengan un contrato con Platzi. Una vez se inicie el contrato solo basta contactar con Platzi para proporcionar las credenciales de acceso.</p>
 
-<p>This example API documentation page was created with <a href="https://github.com/slatedocs/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
+<p>Tenemos ejemplos en python y javascript, dos de los lenguajes más usados en el mundo.</p>
+
+<p>Cualquier mejora por favor contactar a <a href="https://platzi.com/contacto">Platzi</a>.</p>
 <h1 id='authentication'>Authentication</h1>
-<blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<p>Para la authorización, todas las llamadas deben ir con dos headers obligatoriamente.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<p><code>x-platzi-company-api-key: platzi-xxxxxxxx.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</code></p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
+<p><code>User-Agent: XXXXXXXXXX</code></p>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-</code></pre></div>
-<blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
-</blockquote>
+<p>Ambos valores serán proporcionados por Platzi.</p>
 
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
+<p>Tambien se deberá conocer tu company_id, este valor es un entero que identifica a tu empresa en Platzi. Será proporcionado por Platzi junto a su API Key.</p>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+Debes reemplazar <code>platzi-xxxxxxxx.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</code> por tu API Key
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h1 id='licencias'>Licencias</h1><h2 id='get-licenses-info'>Get Licenses info</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://platzi.com/api/b2b-v1/activations/&lt;COMPANY_ID&gt;/licenses/"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"x-platzi-company-api-key: platzi-xxxxxxxx.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"User-Agent: XXXXXXXXXX"</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<span class="n">path</span> <span class="o">=</span> <span class="sa">f</span><span class="s">'/api/b2b-v1/activations/</span><span class="si">{</span><span class="n">COMPANY_ID</span><span class="si">}</span><span class="s">/licenses/'</span>
+<span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s">'</span><span class="si">{</span><span class="n">PLATZI_HOST</span><span class="si">}{</span><span class="n">path</span><span class="si">}</span><span class="s">'</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'URL: </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'x-platzi-company-api-key'</span><span class="p">:</span> <span class="n">COMPANY_APIKEY</span><span class="p">,</span>
+    <span class="s">'user-agent'</span><span class="p">:</span> <span class="n">USER_AGENT</span>
+<span class="p">}</span>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">();</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">response</span><span class="p">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="n">pprint</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'An error occurred:'</span><span class="p">,</span> <span class="n">response</span><span class="p">.</span><span class="n">status_code</span><span class="p">)</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"students"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"pending"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"registered"</span><span class="p">:</span><span class="w"> </span><span class="mi">48</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"licenses"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"available"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves all kittens.</p>
+<p>Este endpoint obtiene la información general de las licencias y su uso.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
+<p><code>GET https://platzi.com/api/b2b-v1/activations/&lt;company_id&gt;/licenses/</code></p>
 
 <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+Recuerda — sustituir company_id por su identificador.
 </aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h1 id='activaciones-de-estudiantes'>Activaciones de estudiantes</h1><h2 id='get-list-students'>Get List Students</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="s2">"https://platzi.com/api/b2b-v1/activations/&lt;COMPANY_ID&gt;/"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"x-platzi-company-api-key: platzi-xxxxxxxx.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"User-Agent: XXXXXXXXXX"</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<span class="n">path</span> <span class="o">=</span> <span class="sa">f</span><span class="s">'/api/b2b-v1/activations/</span><span class="si">{</span><span class="n">COMPANY_ID</span><span class="si">}</span><span class="s">/'</span>
+<span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s">'</span><span class="si">{</span><span class="n">PLATZI_HOST</span><span class="si">}{</span><span class="n">path</span><span class="si">}</span><span class="s">'</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'URL: </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'x-platzi-company-api-key'</span><span class="p">:</span> <span class="n">COMPANY_APIKEY</span><span class="p">,</span>
+    <span class="s">'user-agent'</span><span class="p">:</span> <span class="n">USER_AGENT</span>
+<span class="p">}</span>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">response</span><span class="p">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="n">pprint</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'An error occurred:'</span><span class="p">,</span> <span class="n">response</span><span class="p">.</span><span class="n">status_code</span><span class="p">)</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"company_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123456</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">987654</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john@test.com"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-01T00:00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-12-31T23:59:59.999999"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"processing"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"error_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves a specific kitten.</p>
+<p>Este endpoint obtiene la lista de estudiantes de la compañia.
+Tienen los siguientes estados:</p>
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+<ul>
+<li>active</li>
+<li>inactive</li>
+<li>matriculate</li>
+<li>processing</li>
+<li>error</li>
+</ul>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://platzi.com/api/b2b-v1/activations/&lt;company_id&gt;/</code></p>
+
+<aside class="success">
+Recuerda — sustituir company_id por su identificador.
+</aside>
+<h2 id='create-students'>Create Students</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="s2">"https://platzi.com/api/b2b-v1/activations/&lt;COMPANY_ID&gt;/"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"x-platzi-company-api-key: platzi-xxxxxxxx.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"User-Agent: XXXXXXXXXX"</span> <span class="se">\</span>
+  <span class="nt">--data-raw</span> <span class="s1">'{
+        "students": [
+            {
+                "name": "Test Post1",
+                "email": "post1@test.com",
+                "end_date": "2024-01-01",
+                "is_admin": False
+            },
+            {
+                "name": "Test Post2",
+                "email": "post2@test.com",
+                "end_date": "2023-04-01",
+                "is_admin": True
+            }
+        ]
+    }'</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+
+<span class="n">path</span> <span class="o">=</span> <span class="sa">f</span><span class="s">'/api/b2b-v1/activations/</span><span class="si">{</span><span class="n">COMPANY_ID</span><span class="si">}</span><span class="s">/'</span>
+<span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s">'</span><span class="si">{</span><span class="n">PLATZI_HOST</span><span class="si">}{</span><span class="n">path</span><span class="si">}</span><span class="s">'</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'URL: </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'x-platzi-company-api-key'</span><span class="p">:</span> <span class="n">COMPANY_APIKEY</span><span class="p">,</span>
+    <span class="s">'user-agent'</span><span class="p">:</span> <span class="n">USER_AGENT</span><span class="p">,</span>
+    <span class="s">'content-type'</span><span class="p">:</span> <span class="s">'application/json'</span>
+<span class="p">}</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"students"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s">"name"</span><span class="p">:</span> <span class="s">"Test Post1"</span><span class="p">,</span>
+            <span class="s">"email"</span><span class="p">:</span> <span class="s">"post1@test.com"</span><span class="p">,</span>
+            <span class="s">"end_date"</span><span class="p">:</span> <span class="s">"2024-01-01"</span><span class="p">,</span>
+            <span class="s">"is_admin"</span><span class="p">:</span> <span class="bp">False</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s">"name"</span><span class="p">:</span> <span class="s">"Test Post2"</span><span class="p">,</span>
+            <span class="s">"email"</span><span class="p">:</span> <span class="s">"post2@test.com"</span><span class="p">,</span>
+            <span class="s">"end_date"</span><span class="p">:</span> <span class="s">"2023-04-01"</span><span class="p">,</span>
+            <span class="s">"is_admin"</span><span class="p">:</span> <span class="bp">True</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">response</span><span class="p">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="n">pprint</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'An error occurred:'</span><span class="p">,</span> <span class="n">response</span><span class="p">.</span><span class="n">status_code</span><span class="p">)</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"company_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123456</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">987654</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Post1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"post1@test.com"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-01T00:00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-01-01T23:59:59.999999"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"error_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"company_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">369258</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">258147</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Post2"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"post2@test.com"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-01T00:00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-011T23:59:59.999999"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"inactive"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"error_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Este endpoint crea e invita (envía correo de activación) a la lista de estudiantes que se pasen en el payload.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<p><code>POST https://platzi.com/api/b2b-v1/activations/&lt;company_id&gt;/</code></p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
-  <span class="nt">-X</span> DELETE <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
-</tr>
-</tbody></table>
-<h1 id='errors'>Errors</h1>
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
+<aside class="success">
+Recuerda — sustituir company_id por su identificador.
+</aside>
+<h4 id='request-payload'>Request Payload</h4>
+<aside class="pre">
+{
+    "students": [
+        {
+            "name": "Test Post1",
+            "email": "post1@test.com",
+            "end_date": "2024-01-01",
+            "is_admin": False
+        },
+        {
+            "name": "Test Post2",
+            "email": "post2@test.com",
+            "end_date": "2023-04-01",
+            "is_admin": True
+        }
+    ]
+}
 </aside>
 
-<p>The Kittn API uses the following error codes:</p>
-
-<table><thead>
-<tr>
-<th>Error Code</th>
-<th>Meaning</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>400</td>
-<td>Bad Request -- Your request is invalid.</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
-</tr>
-</tbody></table>
-<h1 id='platzi-core-api'>Platzi Core API</h1>
-<p>Version: 1.0.0</p>
-
-<p>Monolith API for Platzi</p>
-<h2 id='api-b2b-v1-activations-company_id'>/api/b2b-v1/activations/{company_id}/</h2><h3 id='get-api-b2b-v1-activations-company_id'>GET /api/b2b-v1/activations/{company_id}/</h3><h4 id='api_b2b_v1_activations_list'>api_b2b_v1_activations_list</h4>
-<ul>
-<li><p>Parameters:</p>
-
-<ul>
-<li><code>company_id</code> (path) - (integer, required)</li>
-<li><code>page</code> (query) - A page number within the paginated result set. (integer)</li>
-<li><code>page_size</code> (query) - Number of results to return per page. (integer)</li>
-</ul></li>
-<li><p>Tags: api</p></li>
-<li><p>Security:</p>
-
-<ul>
-<li>tokenAuth</li>
-<li>tokenAuth</li>
-<li>tokenAuth</li>
-<li>cookieAuth</li>
-<li>tokenAuth</li>
-</ul></li>
-<li><p>Responses:</p>
-
-<ul>
-<li>200:</li>
-<li>Content-Type: application/json</li>
-<li>Schema: <a href="#components/schemas/PaginatedCompanyUserList">PaginatedCompanyUserList</a></li>
-</ul></li>
-</ul>
-<h3 id='post-api-b2b-v1-activations-company_id'>POST /api/b2b-v1/activations/{company_id}/</h3><h4 id='api_b2b_v1_activations_create'>api_b2b_v1_activations_create</h4>
-<ul>
-<li><p>Parameters:</p>
-
-<ul>
-<li><code>company_id</code> (path) - (integer, required)</li>
-</ul></li>
-<li><p>Tags: api</p></li>
-<li><p>Request Body:</p>
-
-<ul>
-<li>Content-Type: application/json</li>
-<li>Schema: <a href="#components/schemas/CompanyUser">CompanyUser</a></li>
-<li>Content-Type: application/x-www-form-urlencoded</li>
-<li>Schema: <a href="#components/schemas/CompanyUser">CompanyUser</a></li>
-<li>Content-Type: multipart/form-data</li>
-<li>Schema: <a href="#components/schemas/CompanyUser">CompanyUser</a></li>
-</ul></li>
-<li><p>Security:</p>
-
-<ul>
-<li>tokenAuth</li>
-<li>tokenAuth</li>
-<li>tokenAuth</li>
-<li>cookieAuth</li>
-<li>tokenAuth</li>
-</ul></li>
-<li><p>Responses:</p>
-
-<ul>
-<li>200:</li>
-<li>Content-Type: application/json</li>
-<li>Schema: <a href="#components/schemas/CompanyUser">CompanyUser</a></li>
-</ul></li>
-</ul>
-<h3 id='patch-api-b2b-v1-activations-company_id'>PATCH /api/b2b-v1/activations/{company_id}/</h3><h4 id='api_b2b_v1_activations_partial_update'>api_b2b_v1_activations_partial_update</h4>
-<ul>
-<li><p>Parameters:</p>
-
-<ul>
-<li><code>company_id</code> (path) - (integer, required)</li>
-</ul></li>
-<li><p>Tags: api</p></li>
-<li><p>Request Body:</p>
-
-<ul>
-<li>Content-Type: application/json</li>
-<li>Schema: <a href="#components/schemas/PatchedCompanyUser">PatchedCompanyUser</a></li>
-<li>Content-Type: application/x-www-form-urlencoded</li>
-<li>Schema: <a href="#components/schemas/PatchedCompanyUser">PatchedCompanyUser</a></li>
-<li>Content-Type: multipart/form-data</li>
-<li>Schema: <a href="#components/schemas/PatchedCompanyUser">PatchedCompanyUser</a></li>
-</ul></li>
-<li><p>Security:</p>
-
-<ul>
-<li>tokenAuth</li>
-<li>tokenAuth</li>
-<li>tokenAuth</li>
-<li>cookieAuth</li>
-<li>tokenAuth</li>
-</ul></li>
-<li><p>Responses:</p>
-
-<ul>
-<li>200:</li>
-<li>Content-Type: application/json</li>
-<li>Schema: <a href="#components/schemas/CompanyUser">CompanyUser</a></li>
-</ul></li>
-</ul>
-<h3 id='delete-api-b2b-v1-activations-company_id'>DELETE /api/b2b-v1/activations/{company_id}/</h3><h4 id='api_b2b_v1_activations_destroy'>api_b2b_v1_activations_destroy</h4>
-<ul>
-<li><p>Parameters:</p>
-
-<ul>
-<li><code>company_id</code> (path) - (integer, required)</li>
-</ul></li>
-<li><p>Tags: api</p></li>
-<li><p>Security:</p>
-
-<ul>
-<li>tokenAuth</li>
-<li>tokenAuth</li>
-<li>tokenAuth</li>
-<li>cookieAuth</li>
-<li>tokenAuth</li>
-</ul></li>
-<li><p>Responses:</p>
-
-<ul>
-<li>204:</li>
-<li>No response body</li>
-</ul></li>
-</ul>
-<h2 id='api-b2b-v1-activations-company_id-csv'>/api/b2b-v1/activations/{company_id}/csv/</h2><h3 id='get-api-b2b-v1-activations-company_id-csv'>GET /api/b2b-v1/activations/{company_id}/csv/</h3><h4 id='api_b2b_v1_activations_csv_retrieve'>api_b2b_v1_activations_csv_retrieve</h4>
-<ul>
-<li><p>Parameters:</p>
-
-<ul>
-<li><code>company_id</code> (path) - (integer, required)</li>
-</ul></li>
-<li><p>Tags: api</p></li>
-<li><p>Security:</p>
-
-<ul>
-<li>tokenAuth</li>
-<li>tokenAuth</li>
-<li>tokenAuth</li>
-<li>cookieAuth</li>
-<li>tokenAuth</li>
-</ul></li>
-<li><p>Responses:</p>
-
-<ul>
-<li>200:</li>
-<li>No response body</li>
-</ul></li>
-</ul>
-<h3 id='post-api-b2b-v1-activations-company_id-csv'>POST /api/b2b-v1/activations/{company_id}/csv/</h3><h4 id='api_b2b_v1_activations_csv_create'>api_b2b_v1_activations_csv_create</h4>
-<ul>
-<li><p>Parameters:</p>
-
-<ul>
-<li><code>company_id</code> (path) - (integer, required)</li>
-</ul></li>
-<li><p>Tags: api</p></li>
-<li><p>Security:</p>
-
-<ul>
-<li>tokenAuth</li>
-<li>tokenAuth</li>
-<li>tokenAuth</li>
-<li>cookieAuth</li>
-<li>tokenAuth</li>
-</ul></li>
-<li><p>Responses:</p>
-
-<ul>
-<li>200:</li>
-<li>No response body</li>
-</ul></li>
-</ul>
-<h2 id='api-b2b-v1-activations-company_id-csv-csv_activations_id'>/api/b2b-v1/activations/{company_id}/csv/{csv_activations_id}/</h2><h3 id='get-api-b2b-v1-activations-company_id-csv-csv_activations_id'>GET /api/b2b-v1/activations/{company_id}/csv/{csv_activations_id}/</h3><h4 id='api_b2b_v1_activations_csv_retrieve_2'>api_b2b_v1_activations_csv_retrieve_2</h4>
-<ul>
-<li><p>Parameters:</p>
-
-<ul>
-<li><code>company_id</code> (path) - (integer, required)</li>
-<li><code>csv_activations_id</code> (path) - (integer, required)</li>
-</ul></li>
-<li><p>Tags: api</p></li>
-<li><p>Security:</p>
-
-<ul>
-<li>tokenAuth</li>
-<li>tokenAuth</li>
-<li>tokenAuth</li>
-<li>cookieAuth</li>
-<li>tokenAuth</li>
-</ul></li>
-<li><p>Responses:</p>
-
-<ul>
-<li>200:</li>
-<li>No response body</li>
-</ul></li>
-</ul>
-<h2 id='api-b2b-v1-activations-company_id-licenses'>/api/b2b-v1/activations/{company_id}/licenses/</h2><h3 id='get-api-b2b-v1-activations-company_id-licenses'>GET /api/b2b-v1/activations/{company_id}/licenses/</h3><h4 id='api_b2b_v1_activations_licenses_retrieve'>api_b2b_v1_activations_licenses_retrieve</h4>
-<ul>
-<li>Description: Return Response with data containing company licenses, invited quantity, registered quantity, and pending quantity</li>
-<li><p>Parameters:</p>
-
-<ul>
-<li><code>company_id</code> (path) - (integer, required)</li>
-</ul></li>
-<li><p>Tags: api</p></li>
-<li><p>Security:</p>
-
-<ul>
-<li>tokenAuth</li>
-<li>tokenAuth</li>
-<li>tokenAuth</li>
-<li>cookieAuth</li>
-<li>tokenAuth</li>
-</ul></li>
-<li><p>Responses:</p>
-
-<ul>
-<li>200:</li>
-<li>No response body</li>
-</ul></li>
-</ul>
+<p>El campo end_date debe ser un campo válido y no superior a la fecha de fin de contrato de la compañia.
+is_admin es opcional, por defecto es False. Para activar un admin que tenga acceso al dashboard.</p>
 
       </div>
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
                 <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
           </div>
       </div>
     </div>
