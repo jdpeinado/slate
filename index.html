@@ -303,7 +303,7 @@
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo-1e815a84.png" class="logo" alt="" />
+      <img src="images/logo-7cd04ccb.png" class="logo" alt="" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
               <a href="#" data-language-name="python">python</a>
@@ -350,6 +350,23 @@
                   </li>
                   <li>
                     <a href="#csv-activations-create" class="toc-h2 toc-link" data-title="CSV Activations Create">CSV Activations Create</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#reportes" class="toc-h1 toc-link" data-title="Reportes">Reportes</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#graphql-endpoints" class="toc-h2 toc-link" data-title="GraphQL Endpoints">GraphQL Endpoints</a>
+                  </li>
+                  <li>
+                    <a href="#companyprogressreport" class="toc-h2 toc-link" data-title="CompanyProgressReport">CompanyProgressReport</a>
+                  </li>
+                  <li>
+                    <a href="#studentcoursesreport" class="toc-h2 toc-link" data-title="StudentCoursesReport">StudentCoursesReport</a>
+                  </li>
+                  <li>
+                    <a href="#studentstatsreport" class="toc-h2 toc-link" data-title="StudentStatsReport">StudentStatsReport</a>
                   </li>
               </ul>
           </li>
@@ -904,6 +921,216 @@ Maria Perez,correo@mail.com
 <aside class="success">
 Recuerda — sustituir company_id por su identificador.
 </aside>
+<h1 id='reportes'>Reportes</h1>
+<p>Para obtener reportes de los estudiantes de una compañia.
+Se pueden obtener a traves de APIs en GrpahQL o REST.</p>
+<h2 id='graphql-endpoints'>GraphQL Endpoints</h2>
+<p>Se puede explorar nuestra API usando alguna herramienta de graphiql</p>
+
+<ul>
+<li>Online grpahiql explorer: <a href="https://www.npmjs.com/package/graphiql">GraphiQL</a> </li>
+<li>Endpoint: https://api.platzi.com/reports/v1/graphql</li>
+</ul>
+
+<aside class="success">
+Recuerda añadir el header <code>x-platzi-company-api-key</code> con tu API Key
+</aside>
+<h2 id='companyprogressreport'>CompanyProgressReport</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl REPORTS_URL <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"x-platzi-company-api-key: COMPANY_APIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"user-agent: USER_AGENT"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
+    "query": "query MyQuery($end_date: Date, $start_date: Date) { companyProgressReport(endDate: $end_date, startDate: $start_date) { companyReport { activeStudents totalApproved totalMinutes } students { name email active activeCourses approvedCourses totalMinutes logDate } } }",
+    "variables": {
+      "start_date": "2022-01-01",
+      "end_date": "2022-12-31"
+    }
+  }'</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="n">REPORTS_URL</span><span class="p">)</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'x-platzi-company-api-key'</span><span class="p">:</span> <span class="n">COMPANY_APIKEY</span><span class="p">,</span>
+    <span class="s">'user-agent'</span><span class="p">:</span> <span class="n">USER_AGENT</span>
+<span class="p">}</span>
+
+<span class="n">variables</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'start_date'</span><span class="p">:</span> <span class="s">'2022-01-01'</span><span class="p">,</span>
+  <span class="s">'end_date'</span><span class="p">:</span> <span class="s">'2022-12-31'</span>
+<span class="p">}</span>
+
+<span class="n">body</span> <span class="o">=</span> <span class="s">"""
+query MyQuery($end_date: Date, $start_date: Date) {
+  companyProgressReport(endDate: $end_date, startDate: $start_date) {
+    companyReport {
+      activeStudents
+      totalApproved
+      totalMinutes
+    }
+    students {
+      name
+      email
+      active
+      activeCourses
+      approvedCourses
+      totalMinutes
+      logDate
+    }
+  }
+}
+"""</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s">'query'</span><span class="p">:</span> <span class="n">body</span><span class="p">,</span> <span class="s">'variables'</span><span class="p">:</span> <span class="n">variables</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">REPORTS_URL</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="p">.</span><span class="n">json</span><span class="p">()</span>
+<span class="k">if</span> <span class="s">'errors'</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+  <span class="k">print</span><span class="p">(</span><span class="s">'An error occurred:'</span><span class="p">)</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div>
+<p>Obtiene el progreso de la company</p>
+<h2 id='studentcoursesreport'>StudentCoursesReport</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl REPORTS_URL <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"x-platzi-company-api-key: COMPANY_APIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"user-agent: USER_AGENT"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
+    "query": "query studentCoursesReport($email: String, $start_date: Date, $end_date: Date) { studentCoursesReport(email: $email, startDate: $start_date, endDate: $end_date) { students { name email active lastProgress studentCourses { courseId title status approvedDate time totalTime progress totalProgress logDate } } } }",
+    "variables": {
+      "email": "john@doe.com",
+      "start_date": "2022-01-01",
+      "end_date": "2022-12-31"
+    }
+  }'</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="n">REPORTS_URL</span><span class="p">)</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'x-platzi-company-api-key'</span><span class="p">:</span> <span class="n">COMPANY_APIKEY</span><span class="p">,</span>
+    <span class="s">'user-agent'</span><span class="p">:</span> <span class="n">USER_AGENT</span>
+<span class="p">}</span>
+
+<span class="n">variables</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'email'</span><span class="p">:</span> <span class="s">'john@doe.com'</span><span class="p">,</span> <span class="c1">#this filter is optional, see below for more info
+</span>  <span class="s">'start_date'</span><span class="p">:</span> <span class="s">'2022-01-01'</span><span class="p">,</span>
+  <span class="s">'end_date'</span><span class="p">:</span> <span class="s">'2022-12-31'</span>
+<span class="p">}</span>
+
+<span class="n">body</span> <span class="o">=</span> <span class="s">"""
+query studentCoursesReport($email: String, $start_date: Date, $end_date: Date) {
+  studentCoursesReport(email: $email, startDate: $start_date, endDate: $end_date) {
+    students {
+      name
+      email
+      active
+      lastProgress
+    studentCourses {
+      courseId
+      title
+      status
+      approvedDate
+      time
+      totalTime
+      progress
+      totalProgress
+      logDate
+      }
+    }
+  }
+}
+"""</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s">'query'</span><span class="p">:</span> <span class="n">body</span><span class="p">,</span> <span class="s">'variables'</span><span class="p">:</span> <span class="n">variables</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">REPORTS_URL</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="p">.</span><span class="n">json</span><span class="p">()</span>
+<span class="k">if</span> <span class="s">'errors'</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+  <span class="k">print</span><span class="p">(</span><span class="s">'An error occurred:'</span><span class="p">)</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div>
+<p>Obtiene el progreso por estudiante y cursos.</p>
+
+<p>Hay otras opciones que podrías elegir para agregar a las variables de la solicitud.</p>
+
+<ul>
+<li>&#39;emails&#39; es un filtro donde puedes introducir una lista de correos electrónicos para limitar la respuesta. Esta opción es incompatible con el filtro singular &#39;email&#39; mostrado en el ejemplo anterior, y los intentos de usar ambos serían fallidos.</li>
+<li>&#39;userIds&#39; es similar, pero en lugar de correos electrónicos, puedes introducir una lista de userIds. Estos son los identificadores que identifican al usuario en nuestra base de datos. Puedes obtener estos ids a partir de la respuesta del endpoint anterior, CompanyProgressReport.</li>
+</ul>
+
+<p>Estas dos opciones, &#39;emails&#39; y &#39;userIds&#39;, no son incompatibles entre sí, sin embargo, debes tener en cuenta que si incluyes ambas al mismo tiempo, solo aparecerán en la respuesta los usuarios cuyo id y correo electrónico coincidan con ambos filtros.</p>
+<h2 id='studentstatsreport'>StudentStatsReport</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl REPORTS_URL <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"x-platzi-company-api-key: COMPANY_APIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"user-agent: USER_AGENT"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
+    "query": "query studentStatsReport($user_ids: [Int]!, $start_date: Date, $end_date: Date) { studentStatsReport(userIds: $user_ids, endDate: $end_date, startDate: $start_date) { userId summary { userId activeCourses approvedCourses totalTime totalMaterials logDate } learningAreas { categoryId categoryName share } } } }",
+    "variables": {
+      "user_ids": [1233456, 987654],
+      "start_date": "2022-01-01",
+      "end_date": "2022-12-31"
+    }
+  }'</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="n">REPORTS_URL</span><span class="p">)</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'x-platzi-company-api-key'</span><span class="p">:</span> <span class="n">COMPANY_APIKEY</span><span class="p">,</span>
+    <span class="s">'user-agent'</span><span class="p">:</span> <span class="n">USER_AGENT</span>
+<span class="p">}</span>
+
+<span class="n">variables</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'email'</span><span class="p">:</span> <span class="s">'john@doe.com'</span><span class="p">,</span> <span class="c1">#this filter is optional, see below for more info
+</span>  <span class="s">'start_date'</span><span class="p">:</span> <span class="s">'2022-01-01'</span><span class="p">,</span>
+  <span class="s">'end_date'</span><span class="p">:</span> <span class="s">'2022-12-31'</span>
+<span class="p">}</span>
+
+<span class="n">body</span> <span class="o">=</span> <span class="s">"""
+query studentCoursesReport($email: String, $start_date: Date, $end_date: Date) {
+  studentCoursesReport(email: $email, startDate: $start_date, endDate: $end_date) {
+    students {
+      name
+      email
+      active
+      lastProgress
+    studentCourses {
+      courseId
+      title
+      status
+      approvedDate
+      time
+      totalTime
+      progress
+      totalProgress
+      logDate
+      }
+    }
+  }
+}
+"""</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s">'query'</span><span class="p">:</span> <span class="n">body</span><span class="p">,</span> <span class="s">'variables'</span><span class="p">:</span> <span class="n">variables</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">REPORTS_URL</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="p">.</span><span class="n">json</span><span class="p">()</span>
+<span class="k">if</span> <span class="s">'errors'</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+  <span class="k">print</span><span class="p">(</span><span class="s">'An error occurred:'</span><span class="p">)</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div>
+<p>Obtiene el progreso por estudiante.</p>
 
       </div>
       <div class="dark-box">
