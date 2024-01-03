@@ -11,6 +11,7 @@ toc_footers:
 includes:
   - licenses
   - activations
+  - reports
 
 search: true
 
